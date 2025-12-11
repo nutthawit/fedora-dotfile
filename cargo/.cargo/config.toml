@@ -1,0 +1,16 @@
+[target.x86_64-unknown-linux-gnu]
+rustflags = [
+  # Use the clang executable as the final linker driver, replacing the default C compiler (cc/gcc).
+  "-C", "linker=clang",
+
+  # This is a linker argument passed through the driver (clang) to specify that it should use the LLD linker instead of its default (like GNU ld).
+  # https://lld.llvm.org/#using-lld
+  "-C", "link-arg=-fuse-ld=lld",
+
+  # Force to use dynamic linker
+  # https://doc.rust-lang.org/beta/reference/linkage.html#r-link.crt.crt-static
+  #"-C", "target-feature=-crt-static"
+
+  # Tell the compiler to generate the newest (and potentially fastest) instructions specific to a certain CPU architecture
+  "-C", "target-cpu=native",
+]
