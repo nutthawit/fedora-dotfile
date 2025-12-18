@@ -2,12 +2,12 @@ Install
 
 ```sh
 # lm_sensor for cpu temperature measurement
-sudo dnf install lm_sensor steam
+sudo dnf install lm_sensors steam
 ```
 
 Check GPU driver is loaded
 
-```s
+```sh
 lspci -k | grep amd
 >>>
 Kernel driver in use: amdgpu
@@ -35,3 +35,13 @@ CPU temperature measurement
 ```sh
 watch -n 2 sensors
 ```
+
+Joystick 
+
+```sh
+sudo dnf install  joystick-support jstest-gtk linuxconsoletools
+```
+
+Testing
+
+Once the modules are loaded, you should be able to find a new device: /dev/input/js0 and a file ending with -event-joystick in /dev/input/by-id directory. You can simply cat those devices to see if the joystick works — move the stick around, press all the buttons - you should see mojibake printed when you move the sticks or press buttons.

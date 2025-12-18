@@ -6,6 +6,7 @@ rustflags = [
   # This is a linker argument passed through the driver (clang) to specify that it should use the LLD linker instead of its default (like GNU ld).
   # https://lld.llvm.org/#using-lld
   "-C", "link-arg=-fuse-ld=lld",
+  "-C", "target-feature=-sha",
 
   # Force to use dynamic linker
   # https://doc.rust-lang.org/beta/reference/linkage.html#r-link.crt.crt-static

@@ -1,14 +1,15 @@
 1. Sudo without password
 
 ```sh
+# run as root
 EDITOR=vi visudo
 ```
 
 2. Permanent mount mozilla and thunderbird
 
-```sh
+<!--```sh
 mv "${HOME}/.mozilla" "${HOME}/.mozilla-old"
-```
+```-->
 
 ```sh
 # run as root
@@ -29,10 +30,10 @@ lsblk
 ```sh
 # Pluged the thumb drive
 DRIVE=/run/media/tie/SanDisk32G
-cp -a "${DRIVE}/ssh/*" "${HOME}/.ssh/"
-cp -a "${DRIVE}/mozilla/*" "${HOME}/.mozilla/"
-cp -a "${DRIVE}/thunderbird/*" "${HOME}/.thunderbird/"
-cp -a "${DRIVE}/Password.kdbx" "${HOME}/Password.kdbx"
+cp -r ${DRIVE}/ssh ${HOME}/.ssh
+cp -r ${DRIVE}/mozilla/* ${HOME}/.mozilla/
+cp -r ${DRIVE}/thunderbird/* ${HOME}/.thunderbird/
+cp ${DRIVE}/Passwords.kdbx ${HOME}/
 ```
 
 Enable rpmfusion
@@ -62,11 +63,11 @@ git clone git@github.com:nutthawit/fedora-dotfile.git ~/.dotfile
 sudo dnf install gstreamer1-plugin-openh264 mozilla-openh264
 
 # Necessary tools
-sudo dnf install stow keepassxc telegram-desktop
+sudo dnf install stow tmux keepassxc telegram-desktop
 
 # Terminal tools
-dnf copr enable atim/starship
-dnf install starship zoxide
+sudo dnf copr enable atim/starship
+sudo dnf install starship zoxide
 
 # Install tmux-resurrect
 git clone https://github.com/tmux-plugins/tmux-resurrect.git ~/tmux-resurrect
@@ -85,7 +86,6 @@ source ~/.bashrc
 6. Snapshot post-install
 
 ```sh
-# run as root
-snap @ post-install
-snap @home post-install
+sudo snap @ post_install
+sudo snap @home post_install
 ```

@@ -167,11 +167,12 @@ mkdir /mnt/btr_pool/btrbk_snapshots
 
 Then, restart a machine and snapshot will automatically create when the machine startup.
 fresh-kde
+
 9. Create first snapshot
 
 ```sh
 # run as root
-DE="kde"
-snap @ "fresh-${DE}"
-snap @home "fresh-${DE}"
+DE="cosmic"
+snap @ "fresh_${DE}"
+snap @home "fresh_${DE}"
 ```
