@@ -135,3 +135,5 @@ alias bye='sudo poweroff'
 alias see='sudo reboot'
 
 PS1='[\u@\h \W]\$ '
+
+export STM32_PRG_PATH=/home/tie/STMicroelectronics/STM32Cube/STM32CubeProgrammer/bin

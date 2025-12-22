@@ -46,3 +46,14 @@ bash rustrover.sh
 ```sh
 sudo dnf @cosmic-desktop @cosmic-desktop-apps
 ```-->
+
+Stm32 utilities install
+
+```sh
+# Arm gdb
+dnf copr enable rleh/arm-none-eabi-gdb
+dnf install arm-none-eabi-gdb
+
+# OpenOCD
+dnf install openocd
+```
