@@ -63,7 +63,7 @@ git clone git@github.com:nutthawit/fedora-dotfile.git ~/.dotfile
 sudo dnf install gstreamer1-plugin-openh264 mozilla-openh264
 
 # Necessary tools
-sudo dnf install stow tmux keepassxc telegram-desktop
+sudo dnf install stow tmux keepassxc telegram-desktop btop
 
 # Terminal tools
 sudo dnf copr enable atim/starship
